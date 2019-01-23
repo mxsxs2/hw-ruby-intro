@@ -35,7 +35,7 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return !s.nil? && !s.empty? && !{"A"=>nil, "E"=>nil, "I"=>nil, "O"=>nil, "U"=>nil}.key?(s.chars[0].upcase) && s.chars[0]=~ /[A-Za-z]/
 end
 
 def binary_multiple_of_4? s
