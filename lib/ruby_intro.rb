@@ -23,7 +23,9 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  return false if !arr.any? || arr.length==1
+  arr.each{|n1| arr.each {|n2| return true if n1!=n2 && n1+n2==n}}
+  return false
 end
 
 # Part 2
