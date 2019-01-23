@@ -9,21 +9,12 @@ end
 def max_2_sum arr
   return 0 if !arr.any?
   return arr[0] if arr.length==1
-  num1=-(2**(0.size * 8 -2))
-  num2=-(2**(0.size * 8 -2))
-  arr.each do |n| 
-    if n>num1 
-     num2=num1
-     num1=n
-    elsif n>num2
-      num2=n 
-    end
-  end
-  num1+num2
+  arr.sort!
+  arr[-1]+arr[-2]
 end
 
 def sum_to_n? arr, n
-  return false if !arr.any? || arr.length==1
+  #return false if !arr.any? || arr.length==1
   arr.each{|n1| arr.each {|n2| return true if n1!=n2 && n1+n2==n}}
   return false
 end
@@ -52,7 +43,7 @@ class BookInStock
     @isbn=isbn
     @price=price
   end
-  
+
   public
   def price_as_string
     return "$#{'%.2f' % @price}"
