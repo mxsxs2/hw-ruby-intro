@@ -7,7 +7,19 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  return 0 if !arr.any?
+  return arr[0] if arr.length==1
+  num1=-(2**(0.size * 8 -2))
+  num2=-(2**(0.size * 8 -2))
+  arr.each do |n| 
+    if n>num1 
+     num2=num1
+     num1=n
+    elsif n>num2
+      num2=n 
+    end
+  end
+  num1+num2
 end
 
 def sum_to_n? arr, n
